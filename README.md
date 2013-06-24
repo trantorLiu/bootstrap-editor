@@ -16,6 +16,14 @@ npm install blueimp-file-upload-node
 # Then open bootstrap-editor/index.html with your browser.
 ```
 
+## Demo
+**Currently, there's no server-side support for the demo page.**
+It only show you what the editor looks like.
+But you can image that with the server-side support, after choosing an image, it will be pasted to the textarea.
+
+http://trantorliu.github.io/bootstrap-editor
+
+
 ## Files to reference
 ```html
 <script src="lib/js/wysihtml5-0.3.0.js"></script>
