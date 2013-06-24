@@ -2,6 +2,20 @@
 
 bootstrap-editor extends [bootstrap-wysihtml5](https://github.com/jhollingworth/bootstrap-wysihtml5) with image upload feature by using [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload).
 
+## Running the Exmaple
+
+```bash
+git clone git@github.com:trantorLiu/bootstrap-editor.git
+cd bootstrap-editor
+
+# Setup the server side. See the **Server** section below for more info.
+mkdir node_modules
+npm install blueimp-file-upload-node
+./node_modules/blueimp-file-upload-node/server.js
+
+# Then open bootstrap-editor/index.html with your browser.
+```
+
 ## Files to reference
 ```html
 <script src="lib/js/wysihtml5-0.3.0.js"></script>
@@ -56,7 +70,7 @@ There are some server side support avaliable on https://github.com/blueimp/jQuer
 
 For example, node users can simply type:
 
-```sh
+```bash
 npm install blueimp-file-upload-node
 ./node_modules/blueimp-file-upload-node/server.js
 ```
