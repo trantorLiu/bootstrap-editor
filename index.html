@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+
+<title>bootstrap-editor</title>
+
+
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="lib/css/prettify.css"></link>
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-wysihtml5.css"></link>
+
+<style type="text/css" media="screen">
+.btn.jumbo {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+</style>
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41799231-1', 'github.com');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="hero-unit" style="margin-top:40px">
+    <h1 style="font-size:58px">bootstrap-editor <small>Simple, beautiful wysiwyg editors</small></h1>
+    <hr/>
+    <textarea class="textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="span6">
+      <h2>About</h2>
+      <p>
+      bootstrap-editor extends <a href="https://github.com/jhollingworth/bootstrap-wysihtml5">bootstrap-wysihtml5</a> with file upload feature.
+      </p>
+
+      <p style="text-align:center; margin-top:20px">
+      <a class="btn btn-large btn-primary jumbo" href="https://github.com/trantorLiu/bootstrap-editor">View project on Github</a>
+      </p>
+    </div>
+    <div class="span6" >
+      <h2>Usage</h2>
+
+
+      <p>
+      <pre class="prettyprint linenums">$('.textarea').bootstrapEditor({
+  fileupload: {
+    url: 'http://localhost:8888',
+    dataType: 'json',
+    done: function(e, data) {
+      var imgs = [];
+      $.each(data.result.files, function(index, file) {
+        imgs.push({
+          src: file.url,
+          alt: file.name
+        });
+      });
+      return imgs;
+    }
+  }
+});</pre>
+      </p>
+
+      <h3>Dependencies</h3>
+      <p>
+      <ul>
+        <li><a href="https://github.com/jhollingworth/bootstrap-wysihtml5">bootstrap-wysihtml5</a></li>
+        <li><a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload</a></li>
+      </ul>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<script src="lib/js/wysihtml5-0.3.0.js"></script>
+<script src="lib/js/jquery-1.7.2.min.js"></script>
+<script src="lib/js/prettify.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/bootstrap-wysihtml5.js"></script>
+<script src="lib/js/jquery.ui.widget.js"></script>
+<script src="lib/js/jquery.iframe-transport.js"></script>
+<script src="lib/js/jquery.fileupload.js"></script>
+<script src="src/bootstrap-editor.js"></script>
+
+<script>
+$('.textarea').bootstrapEditor({
+  fileupload: {
+    url: 'http://localhost:8888',
+    dataType: 'json',
+    done: function(e, data) {
+      var imgs = [];
+      $.each(data.result.files, function(index, file) {
+        imgs.push({
+          src: file.url,
+          alt: file.name
+        });
+      });
+      return imgs;
+    }
+  }
+});
+</script>
+
+<script type="text/javascript" charset="utf-8">
+$(prettyPrint);
+</script>
+
+</body>
+</html>
