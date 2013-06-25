@@ -26,14 +26,21 @@ http://trantorliu.github.io/bootstrap-editor
 
 ## Files to reference
 ```html
-<script src="lib/js/wysihtml5-0.3.0.js"></script>
+<!-- Both bootstrap-wysihtml5 and jQuery-File-Upload need jQuery -->
 <script src="lib/js/jquery-1.7.2.min.js"></script>
-<script src="lib/js/prettify.js"></script>
+
+<!-- Dependencies of bootstrap-wysihtml5 -->
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-wysihtml5.css"></link>
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css"></link>
+<script src="lib/js/wysihtml5-0.3.0.js"></script>
 <script src="lib/js/bootstrap.min.js"></script>
 <script src="lib/js/bootstrap-wysihtml5.js"></script>
+
+<!-- Dependencies of jQuery-File-Upload -->
 <script src="lib/js/jquery.ui.widget.js"></script>
 <script src="lib/js/jquery.iframe-transport.js"></script>
 <script src="lib/js/jquery.fileupload.js"></script>
+
 <script src="src/bootstrap-editor.js"></script>
 ```
 
@@ -66,7 +73,7 @@ The `done` callback should return an object or an array of objects with the foll
 ```javascript
 {
   src: '/path/to/the/image',
-  alt: 'some alt text'    // optional
+  alt: 'img alt'    // optional
 }
 ```
 
