@@ -28,11 +28,18 @@
 
           done = function(e, data) {
             var imgs;
+
+            // Trigger the `done` callback in the `fileuplaod` option.
+            // `done` should return an object or an array of objects with the following format:
+            // {
+            //   src: 'img src',
+            //   alt: 'img alt'  // optional
+            // }
             imgs = fileuploadOptions.done(e, data);
-            insertImageModal.modal('hide');
 
             if (!$.isArray(imgs)) imgs = [imgs];
 
+            insertImageModal.modal('hide');
             $.each(imgs, function(index, img) {
               insertImage(img);
             });
@@ -42,9 +49,6 @@
             done: done
           }));
 
-          insertImageModal.on('click.dismiss.modal', '[data-dismiss="modal"]', function(e) {
-            e.stopPropagation();
-          });
           return false;
         }
         else {
@@ -71,7 +75,7 @@
           '<input name="file" class="file" type="file" multiple>' +
           '</div>' +
           '<div class="modal-footer">' +
-          '<a href="#" class="btn" data-dismiss="modal">' + locale.image.cancel + '</a>' +
+          '<button class="btn" data-dismiss="modal">' + locale.image.cancel + '</button>' +
           '</div>' +
           '</div>' +
           '<a class="btn" data-wysihtml5-command="insertImage" title="' + locale.image.insert + '"><i class="icon-picture"></i></a>' +
@@ -81,7 +85,9 @@
   };
 
   $.fn.bootstrapEditor = function(options) {
-    if (options.fileupload) fileuploadOptions = options.fileupload;
+    if (options && options.image !== false && options.fileupload) {
+      fileuploadOptions = options.fileupload;
+    }
     $(this).wysihtml5($.extend(wysihtml5Options, options));
   };
 
