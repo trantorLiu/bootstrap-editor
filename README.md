@@ -72,10 +72,13 @@ The `done` callback should return an object or an array of objects with the foll
 
 ```javascript
 {
-  src: '/path/to/the/image',
+  src: 'http://example.com/path/to/the/image',
   alt: 'img alt'    // optional
 }
 ```
+
+Note that **`src` must be a full absolute url**,
+or it would be stripped out by wysihtml5.
 
 All other options are same as [bootstrap-wysihtml5](https://github.com/jhollingworth/bootstrap-wysihtml5/).
 
