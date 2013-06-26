@@ -2,7 +2,7 @@
 
 bootstrap-editor extends [bootstrap-wysihtml5](https://github.com/jhollingworth/bootstrap-wysihtml5) with image upload feature by using [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload).
 
-## Running the Exmaple
+## Running the Example
 
 ```bash
 git clone git@github.com:trantorLiu/bootstrap-editor.git
