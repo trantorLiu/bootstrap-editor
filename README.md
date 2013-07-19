@@ -1,3 +1,10 @@
+# This Project is Colsed
+
+This project has been moved to [trantorLiu/bootstrap-wysihtml5](https://github.com/trantorLiu/bootstrap-wysihtml5).
+The default **file-upload** branch add file upload support on the origin project.
+So there's no need to reference another library for this feature.
+See the [image upload section](https://github.com/trantorLiu/bootstrap-wysihtml5#image-upload) on its README for the usage.
+
 # bootstrap-editor
 
 bootstrap-editor extends [bootstrap-wysihtml5](https://github.com/jhollingworth/bootstrap-wysihtml5) with image upload feature by using [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload).
